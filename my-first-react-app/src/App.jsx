@@ -1,5 +1,6 @@
 import "./App.css";
 import ArrayProps from "./array-props";
+import Use_State from "./useState";
 // import Array_Props from "./array-props";
 // import Component from "./component";
 // import Props3 from "./props";
@@ -33,6 +34,7 @@ function App() {
       {/* <Props2 person={person}></Props2> */}
       {/* <Props3 person={person2}></Props3> */}
       {/* <ArrayProps users={users}></ArrayProps> */}
+      <Use_State></Use_State>
     </>
   );
 }
