@@ -1,11 +1,23 @@
+import { Suspense } from "react";
 import "./App.css";
-import ArrayProps from "./array-props";
-import Use_State from "./useState";
+import Comments from "./comments";
+// import ArrayProps from "./array-props";
+// import Use_State from "./useState";
 // import Array_Props from "./array-props";
 // import Component from "./component";
 // import Props3 from "./props";
 // import Props2 from "./props";
 // import Props from "./props";
+// import Posts from "./posts";
+
+// const fetchPosts = fetch("https://jsonplaceholder.typicode.com/posts").then(
+//   (res) => res.json(),
+// );
+
+const fetchFunction = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+  return res.json();
+};
 
 function App() {
   // const person = {
@@ -26,6 +38,8 @@ function App() {
   //   {id:3, name: "rohin", age: 27, email: "rohim@gmail.com", phone: "01254548461" },
   // ];
 
+  const fetchComments = fetchFunction();
+
   return (
     <>
       <h1>Vite + React</h1>
@@ -34,7 +48,13 @@ function App() {
       {/* <Props2 person={person}></Props2> */}
       {/* <Props3 person={person2}></Props3> */}
       {/* <ArrayProps users={users}></ArrayProps> */}
-      <Use_State></Use_State>
+      {/* <Use_State></Use_State> */}
+      {/* <Suspense fallback={<h3>Loading...</h3>}>
+        <Posts fetchPosts={fetchPosts}></Posts>
+      </Suspense> */}
+      <Suspense fallback={<h3>Comments Loading...</h3>}>
+        <Comments fetchComments={fetchComments}></Comments>
+      </Suspense>
     </>
   );
 }

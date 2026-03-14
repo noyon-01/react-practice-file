@@ -44,6 +44,10 @@
 .card {
   border: 2px solid tomato;
   border-radius: 20px;
-  padding: 0 50px;
+  padding: 20px 50px;
   margin-bottom: 20px;
+}
+
+.card button {
+  margin: 5px;
 }
