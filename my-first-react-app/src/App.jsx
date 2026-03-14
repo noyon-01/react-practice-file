@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import "./App.css";
-import Comments from "./comments";
+import Conditional from "./conditional";
+// import Comments from "./comments";
 // import ArrayProps from "./array-props";
 // import Use_State from "./useState";
 // import Array_Props from "./array-props";
@@ -14,10 +15,10 @@ import Comments from "./comments";
 //   (res) => res.json(),
 // );
 
-const fetchFunction = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/comments");
-  return res.json();
-};
+// const fetchFunction = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+//   return res.json();
+// };
 
 function App() {
   // const person = {
@@ -38,7 +39,13 @@ function App() {
   //   {id:3, name: "rohin", age: 27, email: "rohim@gmail.com", phone: "01254548461" },
   // ];
 
-  const fetchComments = fetchFunction();
+  const products = [
+  { title: 'Cabbage', isFruit: true, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 },
+];
+
+  // const fetchComments = fetchFunction();
 
   return (
     <>
@@ -52,9 +59,10 @@ function App() {
       {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Posts fetchPosts={fetchPosts}></Posts>
       </Suspense> */}
-      <Suspense fallback={<h3>Comments Loading...</h3>}>
+      {/* <Suspense fallback={<h3>Comments Loading...</h3>}>
         <Comments fetchComments={fetchComments}></Comments>
-      </Suspense>
+      </Suspense> */}
+      <Conditional products={products}></Conditional>
     </>
   );
 }
