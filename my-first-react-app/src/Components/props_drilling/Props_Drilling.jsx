@@ -5,7 +5,12 @@ export default function Props_Drilling() {
 
   return (
     <div className="card">
-      <Component_One message={message}/>
+      <h1 style={{ fontSize: "50px", color: "gray", fontWeight: "bold" }}>
+        Props Drilling Section
+      </h1>
+      <div className="card">
+        <Component_One message={message} />
+      </div>
     </div>
-  )
+  );
 }
