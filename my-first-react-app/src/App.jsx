@@ -1,6 +1,7 @@
-import { Suspense } from "react";
 import "./App.css";
-import Conditional from "./conditional";
+
+// import { Suspense } from "react";
+// import Conditional from "./conditional";
 // import Comments from "./comments";
 // import ArrayProps from "./array-props";
 // import Use_State from "./useState";
@@ -39,17 +40,17 @@ function App() {
   //   {id:3, name: "rohin", age: 27, email: "rohim@gmail.com", phone: "01254548461" },
   // ];
 
-  const products = [
-    { title: "Cabbage", isFruit: true, id: 1 },
-    { title: "Garlic", isFruit: false, id: 2 },
-    { title: "Apple", isFruit: true, id: 3 },
-  ];
+  // const products = [
+  //   { title: "Cabbage", isFruit: true, id: 1 },
+  //   { title: "Garlic", isFruit: false, id: 2 },
+  //   { title: "Apple", isFruit: true, id: 3 },
+  // ];
 
   // const fetchComments = fetchFunction();
 
   return (
     <>
-      <h1>Vite + React</h1>
+      {/* <h1>Vite + React</h1> */}
       {/* <Component></Component> */}
       {/* <Props name={"Noyon"} email={"noyon-1@gmail.com"} phone={"01585735520"}></Props> */}
       {/* <Props2 person={person}></Props2> */}
@@ -62,7 +63,7 @@ function App() {
       {/* <Suspense fallback={<h3>Comments Loading...</h3>}>
         <Comments fetchComments={fetchComments}></Comments>
       </Suspense> */}
-      <Conditional products={products}></Conditional>
+      {/* <Conditional products={products}></Conditional> */}
     </>
   );
 }

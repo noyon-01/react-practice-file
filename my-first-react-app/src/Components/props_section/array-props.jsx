@@ -1,5 +1,5 @@
 import "./App.css";
-import User from "./user";
+import user from "../User_Section/user"
 
 export default function ArrayProps({ users }) {
   console.log(users);
