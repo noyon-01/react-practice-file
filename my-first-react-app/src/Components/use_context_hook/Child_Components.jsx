@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { AssetsContext } from "./Use_Context_Hook";
 
 export default function Child_Components() {
-    // const assets = useContext(AssetsContext);
   const {assets, user} = useContext(AssetsContext);
 
   return (
