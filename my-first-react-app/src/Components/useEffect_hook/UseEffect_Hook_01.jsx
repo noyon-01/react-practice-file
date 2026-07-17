@@ -2,16 +2,22 @@ import { useEffect, useState } from "react";
 
 export default function UseEffect_Hook_01() {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUser = async () => {
       const res = await fetch("https://jsonplaceholder.typicode.com/users");
       const data = await res.json();
       setUsers(data);
+      setLoading(false);
     };
 
     fetchUser();
   }, []);
+
+  if (loading) {
+    return <h4>Data is loading....</h4>;
+  }
 
   //   console.log(users);
 
@@ -24,39 +30,16 @@ export default function UseEffect_Hook_01() {
         <h1>API Call</h1>
         <div>
           {users.map((user) => (
-            <h3 key={user.id}>{user.name}</h3>
+            <div className="card" key={user.id}>
+              <h3>Name: {user.name}</h3>
+              <p>Email: {user.email}</p>
+              <p>Phone: {user.phone}</p>
+              <p>Website: {user.website}</p>
+              <p>Company: {user.company.name}</p>
+            </div>
           ))}
         </div>
       </div>
     </div>
   );
 }
-
-// import React, { useState, useEffect } from 'react';
-
-// function UseEffect_Hook_01() {
-//   const [users, setUsers] = useState([]);
-
-//   useEffect(() => {
-//     // fetch('https://jsonplaceholder.typicode.com/users')
-//     //   .then(res => res.json())
-//     //   .then(data => setUsers(data));
-
-//     const fetchUser = async () => {
-//         const res = await fetch("https://jsonplaceholder.typicode.com/users");
-//         const data = await res.json();
-//         setUsers(data)
-//     }
-
-//     fetchUser();
-
-//   }, []);
-
-//   return (
-//     <div>
-//       {users.map(user => <p key={user.id}>{user.name}</p>)}
-//     </div>
-//   );
-// }
-
-// export default UseEffect_Hook_01;
