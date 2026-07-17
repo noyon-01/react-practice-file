@@ -1,4 +1,5 @@
 import "./App.css";
+import React_Advance_Topic from "./React_Advance_Topic";
 
 // import { Suspense } from "react";
 // import Conditional from "./conditional";
@@ -64,6 +65,8 @@ function App() {
         <Comments fetchComments={fetchComments}></Comments>
       </Suspense> */}
       {/* <Conditional products={products}></Conditional> */}
+
+      <React_Advance_Topic />
     </>
   );
 }
